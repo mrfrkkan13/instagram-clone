@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/components/custom_icon_button.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {
+import 'custom_icon_button.dart';
+
+class TimelineAppbar extends StatelessWidget
+    implements PreferredSizeWidget {
   const TimelineAppbar({super.key});
-  @override
-  Size get preferredSize => const Size.fromHeight(65);
 
+  @override
+  Size get preferredSize => Size.fromHeight(65);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -13,7 +17,7 @@ class TimelineAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: const EdgeInsets.only(top: 25.0),
         child: Image.asset(
-          "assets/images/appbar_logo.png",
+          "assets/instagram.png",
           height: 30,
           fit: BoxFit.fitHeight,
         ),
