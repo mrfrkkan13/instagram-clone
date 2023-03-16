@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 
 class BubleeStory extends StatefulWidget {
-  const BubleeStory({super.key});
+  String image;
+  BubleeStory({super.key, required this.image});
 
   @override
   State<BubleeStory> createState() => _BubleeStoryState();
@@ -23,6 +24,7 @@ class _BubleeStoryState extends State<BubleeStory> {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
+                image: DecorationImage(image: NetworkImage(widget.image),fit: BoxFit.fitHeight),
                 border: const GradientBoxBorder(
                   gradient: LinearGradient(colors: [Color(0xFF9B2282), Color(0xFFEEA863)]),
                    width: 2,
