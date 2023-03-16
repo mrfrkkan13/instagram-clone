@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/component/timeline_stories.dart';
+import 'package:insta_clone/components/timeline_appbar.dart';
+import 'package:insta_clone/pages/home_page.dart';
 
 
 void main() {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: StroiesPage(),
+      home: MyHomePage(),
     );
   }
 }
