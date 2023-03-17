@@ -1,14 +1,12 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:instagram_clone/view/stroy/story_page.dart';
 
 class TimelineStories extends StatefulWidget {
   const TimelineStories({super.key});
 
   @override
-  State<TimelineStories> createState() => _TimelineStoriesState();
+  State<TimelineStories> createState() =>
+      _TimelineStoriesState();
 }
 
 class _TimelineStoriesState extends State<TimelineStories> {
@@ -21,56 +19,61 @@ class _TimelineStoriesState extends State<TimelineStories> {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
-          _storyItem(faker.image.image(), faker.person.firstName()),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
+          _storyItem(),
         ],
       ),
     );
   }
 
-  Widget _storyItem(String image, String name) {
+  Widget _storyItem() {
     return Column(
       children: [
-        GestureDetector(
-          onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) =>  StoryPage()));},
+        Container(
+          margin: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.purple,
+                Colors.pink,
+                Colors.orange,
+              ],
+            ),
+          ),
           child: Container(
-            margin: EdgeInsets.all(5),
+            margin: EdgeInsets.all(3),
+            height: 70,
+            width: 70,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomRight,
-                colors: [
-                  Colors.purple,
-                  Colors.pink,
-                  Colors.orange,
-                ],
-              ),
-            ),
-            child: Container(
-              margin: EdgeInsets.all(3),
-              height: 70,
-              width: 70,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: NetworkImage(image),
-                  fit: BoxFit.cover,
+              image: DecorationImage(
+                image: NetworkImage(
+                  faker.image.image(random: true),
                 ),
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -78,10 +81,11 @@ class _TimelineStoriesState extends State<TimelineStories> {
         SizedBox(
           width: 70,
           child: Text(
-            name,
+            faker.person.firstName(),
             overflow: TextOverflow.fade,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white, fontSize: 12),
+            style: TextStyle(
+                color: Colors.white, fontSize: 12),
           ),
         )
       ],

@@ -1,7 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/components/custom_icon_button.dart';
 import 'package:instagram_clone/models/post_model.dart';
 
@@ -44,14 +42,10 @@ class PostView extends StatelessWidget {
                   icon: "assets/icons/comment.png",
                   onPressed: () {}),
               CustomIconButton(
-                  padding: 10,
-                  icon: "assets/icons/send.png",
-                  onPressed: () {}),
+                  padding: 10, icon: "assets/icons/send.png", onPressed: () {}),
               Spacer(),
               CustomIconButton(
-                  padding: 10,
-                  icon: "assets/icons/save.png",
-                  onPressed: () {}),
+                  padding: 10, icon: "assets/icons/save.png", onPressed: () {}),
             ],
           ),
           Padding(
