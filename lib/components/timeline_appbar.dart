@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:instagram_clone/view/mesapage/dm_screen.dart';
 
 import 'custom_icon_button.dart';
 
@@ -29,7 +30,9 @@ class TimelineAppbar extends StatelessWidget
         ),
         CustomIconButton(
           icon: "assets/icons/message.png",
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context)=> const DmScreen()));
+          },
         ),
       ],
     );

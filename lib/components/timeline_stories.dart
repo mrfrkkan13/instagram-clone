@@ -1,6 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
+import '../view/storyPage/story_page.dart';
+
 class TimelineStories extends StatefulWidget {
   const TimelineStories({super.key});
 
@@ -63,17 +65,22 @@ class _TimelineStoriesState extends State<TimelineStories> {
               ],
             ),
           ),
-          child: Container(
-            margin: EdgeInsets.all(3),
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: NetworkImage(
-                  faker.image.image(random: true),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>StoryScreen()));
+            },
+            child: Container(
+              margin: EdgeInsets.all(3),
+              height: 70,
+              width: 70,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: NetworkImage(
+                    faker.image.image(random: true),
+                  ),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
               ),
             ),
           ),

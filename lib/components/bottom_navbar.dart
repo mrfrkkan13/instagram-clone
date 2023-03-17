@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/view/createPost/create_post_screen.dart';
+import 'package:instagram_clone/view/home/discovery_screen.dart';
+import 'package:instagram_clone/view/home/timeline_screen.dart';
+import 'package:instagram_clone/view/reels/reels_screen.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -36,6 +40,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget iconButton(String icon, int index) => GestureDetector(
         onTap: () {
           context.read<HomePageViewModel>().setPage(index);
+         switch (context.read<HomePageViewModel>().page) {
+           case 2:
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> CreatePostScreen())); break;
+           case 3:
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> ReelScreen())); break;
+           default:
+         }
         },
         child: Opacity(
           opacity: context.watch<HomePageViewModel>().page == index ? 1.0 : 0.7,

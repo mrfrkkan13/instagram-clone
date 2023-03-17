@@ -1,11 +1,15 @@
+
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/dm_screen_mesage.dart';
 import 'package:instagram_clone/view/home_screen.dart';
+import 'package:instagram_clone/view/mesapage/dm_screen.dart';
+import 'package:instagram_clone/view/reels/reels_screen.dart';
 import 'package:provider/provider.dart';
 import 'app_init.dart';
 import 'view_models/discovery_view_model.dart';
 import 'view_models/home_page_view_model.dart';
 import 'view_models/timeline_view_model.dart';
-
+//@dart=2.9
 
 
 
