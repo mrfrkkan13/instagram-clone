@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/view/createPost/create_post_screen.dart';
 import 'package:instagram_clone/view/home/discovery_screen.dart';
 import 'package:instagram_clone/view/home/timeline_screen.dart';
+import 'package:instagram_clone/view/profile/profile_screen.dart';
 import 'package:instagram_clone/view/reels/reels_screen.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,8 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           left: 18.0,
           right: 18.0,
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           for (int i = 0; i < icons.length; i++) iconButton(icons[i], i),
         ]),
       ),
@@ -40,13 +42,21 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget iconButton(String icon, int index) => GestureDetector(
         onTap: () {
           context.read<HomePageViewModel>().setPage(index);
-         switch (context.read<HomePageViewModel>().page) {
-           case 2:
-           Navigator.push(context, MaterialPageRoute(builder: (context)=> CreatePostScreen())); break;
-           case 3:
-           Navigator.push(context, MaterialPageRoute(builder: (context)=> ReelScreen())); break;
-           default:
-         }
+          switch (context.read<HomePageViewModel>().page) {
+            case 2:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CreatePostScreen()));
+              break;
+            case 3:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ReelScreen()));
+              break;
+            case 4:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+              break;
+            default:
+          }
         },
         child: Opacity(
           opacity: context.watch<HomePageViewModel>().page == index ? 1.0 : 0.7,
