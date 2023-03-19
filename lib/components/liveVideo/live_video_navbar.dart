@@ -12,6 +12,8 @@ class LiveVideoNavBar extends StatelessWidget {
         padding: EdgeInsets.only(bottom: 30),
         child: Container(
           height: 50,
+          decoration: BoxDecoration(
+              color: Colors.grey[900], borderRadius: BorderRadius.circular(20)),
           margin: EdgeInsets.only(),
           child: ListView(
             scrollDirection: Axis.horizontal,
@@ -42,6 +44,9 @@ class LiveVideoNavBar extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 20),
                     )),
               ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Image.asset("assets/icons/changecamera.png")),
             ],
           ),
         ),

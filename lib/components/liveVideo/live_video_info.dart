@@ -18,6 +18,9 @@ class LiveVideoInf extends StatelessWidget {
                 icon: Image.asset("assets/icons/hedefkitle.png")),
             IconButton(
                 onPressed: () {}, icon: Image.asset("assets/icons/takvim.png")),
+            IconButton(
+                onPressed: () {},
+                icon: Image.asset("assets/icons/menu-png-icon-2.jpg")),
           ],
         ),
       ),

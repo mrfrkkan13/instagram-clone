@@ -15,8 +15,12 @@ class LiveVideoAppbar extends StatelessWidget {
             icon: Image.asset("assets/icons/livevideoSetting.png")),
         IconButton(
           onPressed: () {},
+          icon: Image.asset("assets/icons/flash.png"),
+        ),
+        IconButton(
+          onPressed: () {},
           icon: Image.asset("assets/icons/cancel2.png"),
-        )
+        ),
       ]),
     );
   }
