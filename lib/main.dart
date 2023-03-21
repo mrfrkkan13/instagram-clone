@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/dm_screen_mesage.dart';
 import 'package:instagram_clone/components/liveVideo/live_video_navbar.dart';
 import 'package:instagram_clone/view/createLiveVideo/live_vide_screen.dart';
+import 'package:instagram_clone/view/createPost/create_post_screen.dart';
 
 import 'package:instagram_clone/view/home_screen.dart';
 import 'package:instagram_clone/view/mesapage/dm_screen.dart';
