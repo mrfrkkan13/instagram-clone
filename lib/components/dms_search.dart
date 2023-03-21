@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:instagram_clone/view_models/discovery_view_model.dart';
 import 'package:provider/provider.dart';
 
-class DiscoveryAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const DiscoveryAppbar({super.key});
+import 'custom_icon_button.dart';
+
+class DmsSearch extends StatelessWidget implements PreferredSizeWidget {
+  const DmsSearch({super.key});
 
   @override
-  Size get preferredSize => const Size.fromHeight(65);
+  Size get preferredSize => Size.fromHeight(65);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -20,18 +24,18 @@ class DiscoveryAppbar extends StatelessWidget implements PreferredSizeWidget {
                     (context.watch<DiscoveryViewModel>().searchView
                         ? 0.75
                         : 0.9),
-                duration: const Duration(milliseconds: 250),
+                duration: Duration(milliseconds: 250),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.white12,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  padding: EdgeInsets.symmetric(vertical: 8),
                   child: TextField(
                     onTap: () {
                       context.read<DiscoveryViewModel>().changeSearchView();
                     },
-                    style: const TextStyle(color: Colors.white70),
+                    style: TextStyle(color: Colors.white70),
                     cursorColor: Colors.white70,
                     decoration: InputDecoration(
                         border: InputBorder.none,
@@ -51,7 +55,7 @@ class DiscoveryAppbar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
             ),
-            if (context.watch<DiscoveryViewModel>().cancelView) const Spacer(),
+            if (context.watch<DiscoveryViewModel>().cancelView) Spacer(),
             if (context.watch<DiscoveryViewModel>().cancelView)
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -59,11 +63,6 @@ class DiscoveryAppbar extends StatelessWidget implements PreferredSizeWidget {
                   onTap: () {
                     context.read<DiscoveryViewModel>().changeSearchView();
                   },
-                  child: const Text(
-                    "Cancel",
-                    overflow: TextOverflow.fade,
-                    style: TextStyle(fontSize: 14),
-                  ),
                 ),
               )
           ],

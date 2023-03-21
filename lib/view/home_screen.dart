@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone/components/bottom_navbar.dart';
-import 'package:instagram_clone/components/discovery_posts.dart';
+import 'package:instagram_clone/components/discovery_post_list.dart';
+
 import 'package:instagram_clone/components/timeline_appbar.dart';
 import 'package:instagram_clone/view/home/timeline_screen.dart';
 import 'package:instagram_clone/view_models/home_page_view_model.dart';
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return const TimelineScreen();
       case 1:
-        return DiscoveryPosts();
+        return DiscoveryGrid();
       default:
         return Container();
     }
